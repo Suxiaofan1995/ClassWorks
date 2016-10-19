@@ -18,16 +18,11 @@
     <div> @( "TIME:" + DateTime.Now.ToString() )</div>
 </div>
 
+
 <ul class="list-unstyled">
-    @for (int i = 0; i < 10; i++)
-    {
-        <li>元素:@(i + 1)</li>
-    }
-</ul>
-<ol>
     @foreach (var item in newsList)
     {
         <li>@item</li>
     }
 
-</ol>
+</ul>

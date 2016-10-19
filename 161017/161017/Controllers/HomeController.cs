@@ -28,7 +28,7 @@ namespace _161017.Controllers
             };
             ViewBag.data = data;
             return View();
-            return View();
+           
         }
         public ActionResult list()
         {
