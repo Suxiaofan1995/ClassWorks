@@ -23,6 +23,11 @@ namespace _161017.Controllers
             }
 
             ViewBag.sum = sum;
+            string[] data = new string[] {
+                "李克强：奋力开创东北全面振兴新局面","神十一与天宫对接成功 航天员“入宫”","这些作品影响习近平数十年"
+            };
+            ViewBag.data = data;
+            return View();
             return View();
         }
         public ActionResult list()

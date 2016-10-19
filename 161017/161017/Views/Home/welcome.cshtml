@@ -5,6 +5,8 @@
     var b = 20;
 
     int v = 100;
+    var newsList = ViewBag.data as string[];
+}
 }
 
 
@@ -22,3 +24,10 @@
         <li>元素:@(i + 1)</li>
     }
 </ul>
+<ol>
+    @foreach (var item in newsList)
+    {
+        <li>@item</li>
+    }
+
+</ol>
