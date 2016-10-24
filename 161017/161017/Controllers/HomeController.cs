@@ -51,5 +51,9 @@ namespace _161017.Controllers
 
             return View();
         }
+        public ActionResult add()
+        {
+            return View();
+        }
     }
 }
