@@ -1,13 +1,12 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -25,11 +24,11 @@
                     <li>@Html.ActionLink("主页", "Index", "Home")</li>
                     <li>@Html.ActionLink("关于", "About", "Home")</li>
                     <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("welcome", "welcome", "Home")</li>
-                    <li>@Html.ActionLink("list", "list", "Home")</li>
-                    <li>@Html.ActionLink("add", "add", "Home")</li>
-
-
+                    <li>@Html.ActionLink("Welcome", "Welcome", "Home")</li>
+                    <li>@Html.ActionLink("新闻列表", "List", "Home")</li>
+                    <li>@Html.ActionLink("添加新闻", "Add", "Home")</li>
+                    <li>@Html.ActionLink("博客", "Index", "Blog")</li>
+                    <li>@Html.ActionLink("添加博文", "AddArticle", "Blog")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -42,7 +41,6 @@
             <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

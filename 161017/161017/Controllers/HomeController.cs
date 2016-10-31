@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace _161017.Controllers
+namespace News.Controllers
 {
     public class HomeController : Controller
     {
@@ -13,7 +13,18 @@ namespace _161017.Controllers
             return View();
         }
 
-        public ActionResult welcome()
+        public ActionResult About()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
+        /// <summary>
+        /// 欢迎页面 
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Welcome()
         {
             var a = 100;
             var sum = 0;
@@ -23,25 +34,26 @@ namespace _161017.Controllers
             }
 
             ViewBag.sum = sum;
-            string[] data = new string[] {
-                "李克强：奋力开创东北全面振兴新局面","神十一与天宫对接成功 航天员“入宫”","这些作品影响习近平数十年"
-            };
-            ViewBag.data = data;
-            return View();
-           
-        }
-        public ActionResult list()
-        {
-            string[] data = new string[] {
-                "李克强：奋力开创东北全面振兴新局面","神十一与天宫对接成功 航天员“入宫”","这些作品影响习近平数十年"
-            };
-            ViewBag.data = data;
             return View();
         }
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
 
+
+        /// <summary>
+        /// 新闻列表
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult List(int page = 10)
+        {
+            string[] data = new string[] { "台风逼近广西景区关闭学校停课",
+                "广西每年入境游客超300万" ,
+                "空军招飞初选10月24日开始",
+                "柳州城市轨道交通勘探工作已展开"};
+
+            ViewBag.data = data;
+            ViewBag.Page = page;
+
+            //ViewData["data"] = data;
+            //ViewData.Model = data;
             return View();
         }
 
@@ -51,12 +63,24 @@ namespace _161017.Controllers
 
             return View();
         }
-        public ActionResult add()
+
+        /// <summary>
+        /// 添加新闻
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Add()
         {
             return View();
         }
-        public ActionResult save()
+
+        /// <summary>
+        /// 保存新闻内容
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Save(string title, string content)
         {
+            ViewBag.Title = title;
+            ViewBag.Content = content;
             return View();
         }
     }
